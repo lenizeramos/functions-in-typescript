@@ -9,8 +9,44 @@
 // Eg: printInfoOrCalculate("TS",5,"+") //Expected result: TS
 // Eg: printInfoOrCalculate("TS") //Expected result: TS
 
-const printInfoOrCalculate = () => {
-  // Code here
+enum Operations {
+  ADD = "+",
+  SUBTRACT = "-",
+  DIVISION = "/",
+  MULTIPLY = "*",
+}
+
+const printInfoOrCalculate = (
+  input: string | number,
+  input2?: number,
+  operator?: string
+) => {
+  if (typeof input === "string") {
+    return input;
+  }
+  if (!input2) {
+    throw "Invalid input";
+  }
+  if (!operator) {
+    throw "Invalid input";
+  }
+
+  if (operator === Operations.ADD) {
+    return input + input2;
+  }
+  if (operator === Operations.SUBTRACT) {
+    return input - input2;
+  }
+  if (operator === Operations.DIVISION) {
+    if (input2 === 0) {
+      throw "Invalid input";
+    }
+    return input + input2;
+  }
+  if (operator === Operations.MULTIPLY) {
+    return input * input2;
+  }
+  throw "Invalid input";
 };
 
 // Tests

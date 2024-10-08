@@ -24,4 +24,8 @@ describe("printInfoOrCalculate", () => {
   test("throws an error for missing operation", () => {
     expect(() => printInfoOrCalculate(5, 3)).toThrow("Invalid input");
   });
+
+  test('throws an error for division by zero (5, 0, "/")', () => {
+    expect(() => printInfoOrCalculate(5, 0, "/")).toThrow("Invalid input");
+  });
 });
