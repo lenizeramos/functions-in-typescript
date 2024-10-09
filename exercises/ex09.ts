@@ -2,8 +2,14 @@
 // returns a string representing the phone number formed by concatenating the numbers in the specified format.
 // return the string "It's missing digits" if the number doesn't have 10 digits or "There are too many digits" if is bigger than 10
 
-const formatPhoneNumber = () => {
-  // Code here
+const formatPhoneNumber = (numbers: number[]): string => {
+  if (numbers.length < 10) {
+    return `It's missing digits`
+  }
+  if (numbers.length > 10) {
+    return `There are too many digits`
+  }
+  return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
 };
 
 export default formatPhoneNumber;

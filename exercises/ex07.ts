@@ -1,8 +1,8 @@
 // Use the `typeof` operator to create a function that dynamically determines the type of the argument and logs it.
 // Return a string;
 
-const logType = () => {
-  // Code here.
+const logType = (value: any): string => {
+  //return `The type of the argument is: ${typeof value}`
 };
 
 // Test cases:
