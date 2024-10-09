@@ -8,8 +8,22 @@
 // If three people like it, it should return '{name1}, {name2} and {name3} like this'
 // If more than three people like it, it should return '{name1}, {name2} and {x} others like this'
 
-const displayLikes = () => {
-  // Code here
+const displayLikes = (names: string[]): string => {
+  const lengthArray = names.length;
+  if (lengthArray === 0) {
+    return "no one likes this";
+  }
+  if (lengthArray === 1) {
+    return `${names[0]} likes this`;
+  }
+  if (lengthArray === 2) {
+    return `${names[0]} and ${names[1]} like this`;
+  }
+  if (lengthArray === 3) {
+    return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+  } else {
+    return `${names[0]}, ${names[1]} and ${lengthArray - 2} others like this`;
+  }
 };
 
 export default displayLikes;
